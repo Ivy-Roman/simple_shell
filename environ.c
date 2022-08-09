@@ -41,3 +41,15 @@ char **_copyenv(void)
 	return (new_environ);
 }
 
+/**
+ * free_env - Frees the the environment copy.
+ */
+void free_env(void)
+{
+	int index;
+
+	for (index = 0; environ[index]; index++)
+		free(environ[index]);
+	free(environ);
+}
+
